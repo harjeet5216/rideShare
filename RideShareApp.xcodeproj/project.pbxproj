@@ -20,6 +20,8 @@
 		54DC579921DE99A60034F8B2 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 54DC579821DE99A60034F8B2 /* GoogleService-Info.plist */; };
 		54E2D20021E91784008135AF /* PostRideController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54E2D1FF21E91784008135AF /* PostRideController.swift */; };
 		54E2D22721EC18D1008135AF /* RideTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54E2D22621EC18D1008135AF /* RideTableViewCell.swift */; };
+		54E2D22D21EE951F008135AF /* SearchRideTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54E2D22C21EE951F008135AF /* SearchRideTableViewController.swift */; };
+		54FB9EE421EFBAB3007D82EE /* ReadMe.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 54FB9EE321EFBAB3007D82EE /* ReadMe.rtf */; };
 		919CD4DE97F4BCDF31F948A7 /* Pods_RideShareApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE7489F6DD5BB540FE8657B3 /* Pods_RideShareApp.framework */; };
 		945F474BB1B9ED1EE9F01CF4 /* Pods_RideShareAppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB39C4A2FB484B04ADD02360 /* Pods_RideShareAppUITests.framework */; };
 		9D2D4E30E26B67D70418FA5C /* Pods_RideShareAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96C859583CC2605A24622D6A /* Pods_RideShareAppTests.framework */; };
@@ -65,6 +67,8 @@
 		54DC579821DE99A60034F8B2 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		54E2D1FF21E91784008135AF /* PostRideController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostRideController.swift; sourceTree = "<group>"; };
 		54E2D22621EC18D1008135AF /* RideTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RideTableViewCell.swift; sourceTree = "<group>"; };
+		54E2D22C21EE951F008135AF /* SearchRideTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchRideTableViewController.swift; sourceTree = "<group>"; };
+		54FB9EE321EFBAB3007D82EE /* ReadMe.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = ReadMe.rtf; sourceTree = "<group>"; };
 		663A999BDADF70476E89E4B3 /* Pods-RideShareApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RideShareApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RideShareApp/Pods-RideShareApp.debug.xcconfig"; sourceTree = "<group>"; };
 		96C859583CC2605A24622D6A /* Pods_RideShareAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RideShareAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB39C4A2FB484B04ADD02360 /* Pods_RideShareAppUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RideShareAppUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -104,6 +108,7 @@
 		54DC575E21DE928F0034F8B2 = {
 			isa = PBXGroup;
 			children = (
+				54FB9EE321EFBAB3007D82EE /* ReadMe.rtf */,
 				54DC576921DE928F0034F8B2 /* RideShareApp */,
 				54DC577E21DE92910034F8B2 /* RideShareAppTests */,
 				54DC578921DE92910034F8B2 /* RideShareAppUITests */,
@@ -172,6 +177,7 @@
 				549A8E9E21E42700001177B8 /* AllRidesTableViewController.swift */,
 				546B5F2321DEF5A60050C6F3 /* ViewController2.swift */,
 				54E2D1FF21E91784008135AF /* PostRideController.swift */,
+				54E2D22C21EE951F008135AF /* SearchRideTableViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -219,6 +225,7 @@
 				54DC576421DE928F0034F8B2 /* Frameworks */,
 				54DC576521DE928F0034F8B2 /* Resources */,
 				CCB081664A39FB4ED2C2941C /* [CP] Embed Pods Frameworks */,
+				A3083E45AF344BB24BC29696 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -318,6 +325,7 @@
 				54DC577521DE92910034F8B2 /* LaunchScreen.storyboard in Resources */,
 				54DC579921DE99A60034F8B2 /* GoogleService-Info.plist in Resources */,
 				54DC577221DE92910034F8B2 /* Assets.xcassets in Resources */,
+				54FB9EE421EFBAB3007D82EE /* ReadMe.rtf in Resources */,
 				54DC577021DE928F0034F8B2 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -383,6 +391,28 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		A3083E45AF344BB24BC29696 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-RideShareApp/Pods-RideShareApp-resources.sh",
+				"${PODS_ROOT}/GoogleSignIn/Resources/GoogleSignIn.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleSignIn.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RideShareApp/Pods-RideShareApp-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		B99CFAE094ACB336809E1B76 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -415,6 +445,7 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-RideShareApp/Pods-RideShareApp-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
 				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
@@ -424,6 +455,7 @@
 			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
@@ -447,6 +479,7 @@
 				54E2D22721EC18D1008135AF /* RideTableViewCell.swift in Sources */,
 				546B5F2421DEF5A60050C6F3 /* ViewController2.swift in Sources */,
 				54E2D20021E91784008135AF /* PostRideController.swift in Sources */,
+				54E2D22D21EE951F008135AF /* SearchRideTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

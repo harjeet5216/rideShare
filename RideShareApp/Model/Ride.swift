@@ -14,16 +14,16 @@ class Ride {
     var destination: String = ""
     var seats: String = ""
     var fare: String = ""
-    //var date: UIDatePicker.Mode { ge
+    var dateAndTime: String = ""
     
     let ref: DatabaseReference!
     
-    init(origin: String, destination: String, seats: String, fare: String) {
+    init(origin: String, destination: String, seats: String, fare: String, dateAndTime: String) {
         self.origin = origin
         self.destination = destination
         self.seats = seats
         self.fare = fare
-       // self.date = date
+        self.dateAndTime = dateAndTime
         ref = Database.database().reference().child("rides").childByAutoId()
     }
     
@@ -34,7 +34,7 @@ class Ride {
             destination = value["destination"] as! String
             seats = value["seats"] as! String
             fare = value["fare"] as! String
-           // date = value["date"] as! UIDatePicker.Mode
+            dateAndTime = value["dateAndTime"] as! String
         }
     }
     
@@ -47,8 +47,8 @@ class Ride {
             "origin" : origin,
             "destination" : destination,
             "seats" : seats,
-            "fare" : fare
-            // "date" : date
+            "fare" : fare,
+            "dateAndTime" : dateAndTime
         ]
     }
 }

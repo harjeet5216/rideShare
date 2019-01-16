@@ -11,17 +11,19 @@ import UIKit
 import Firebase
 
 class RideTableViewCell: UITableViewCell {
+    @IBOutlet weak var dateAndTime: UILabel!
     @IBOutlet weak var originInfo: UILabel!
     @IBOutlet weak var destinationInfo: UILabel!
-    @IBOutlet weak var fareInfo: UITextField!
-    @IBOutlet weak var seatInfo: UITextField!
+    @IBOutlet weak var seatsInfo: UILabel!   
+    @IBOutlet weak var fareInfo: UILabel!
     
     var ride: Ride! {
         didSet {
+            dateAndTime.text = ride.dateAndTime
             originInfo.text = ride.origin
             destinationInfo.text = ride.destination
             fareInfo.text = ride.fare
-            seatInfo.text = ride.seats
+            seatsInfo.text = ride.seats
         }
     }
     

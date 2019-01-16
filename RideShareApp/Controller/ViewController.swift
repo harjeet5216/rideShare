@@ -38,13 +38,11 @@ class ViewController: UIViewController {
                     }
                 }
             }
-
         }
     }
     
     
     @IBAction func anonymouslyButton(_ sender: Any) {
-        
         Auth.auth().signInAnonymously { (user, error) in
             if error == nil {
                 self.performSegue(withIdentifier: "show", sender: self)
@@ -52,12 +50,18 @@ class ViewController: UIViewController {
                 print(error!)
             }
         }
-        
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
     }
     
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
     
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
 }

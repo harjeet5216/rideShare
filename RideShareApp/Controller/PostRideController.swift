@@ -11,16 +11,25 @@ import UIKit
 import Firebase
 
 class PostRideController: UIViewController, UITextFieldDelegate {
-
     @IBOutlet weak var origin: UITextField!
     @IBOutlet weak var destination: UITextField!
     @IBOutlet weak var seats: UITextField!
     @IBOutlet weak var fare: UITextField!
-    @IBOutlet weak var date: UIDatePicker?
-
+    @IBOutlet weak var inputTextField: UITextField!
+    
+    private var datePicker: UIDatePicker?
+    
+    override func viewDidLoad() {
+        datePicker = UIDatePicker()
+        datePicker?.datePickerMode = .dateAndTime
+        datePicker?.addTarget(self, action: #selector(PostRideController.dateChanged(datePicker:)), for: .valueChanged)
+        
+        inputTextField.inputView = datePicker
+    }
+    
+    
     @IBAction func postRide(_ sender: Any) {
-
-        let newRide = Ride(origin: origin.text!, destination: destination.text!, seats: seats.text!, fare: fare.text!)
+        let newRide = Ride(origin: origin.text!, destination: destination.text!, seats: seats.text!, fare: fare.text!, dateAndTime: inputTextField.text!)
         newRide.save()
         self.navigationController!.popViewController(animated: true)
     }
@@ -32,5 +41,12 @@ class PostRideController: UIViewController, UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true
+    }
+    
+    @objc func dateChanged(datePicker: UIDatePicker) {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "EEEE, MMMM d yyyy h:mm a"
+        inputTextField.text = dateFormatter.string(from: datePicker.date)
+
     }
 }

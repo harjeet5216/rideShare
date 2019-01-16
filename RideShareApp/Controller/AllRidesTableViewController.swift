@@ -12,27 +12,24 @@ import Firebase
 class AllRidesTableViewController: UITableViewController {
     
 
-    @IBOutlet weak var addRidebutton: UIBarButtonItem!
+   // @IBOutlet weak var addRidebutton: UIBarButtonItem!
     
-    let rideRef = Database.database().reference().child("rides")
+    let rideRef = Database.database().reference().child("rides").queryOrdered(byChild: "origin")
     var ride = [Ride]()
-    
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
         // download rides
-        
+    
         rideRef.observe(.value) { (snapshot) in
             self.ride.removeAll()
             
             for child in snapshot.children {
                 let childSnapshot = child as! DataSnapshot
                 let ride = Ride(snapshot: childSnapshot)
-               // print(ride)
                 self.ride.insert(ride, at: 0)
             }
-            
             self.tableView.reloadData()
         }
         
@@ -72,21 +69,8 @@ class AllRidesTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let task = self.ride[indexPath.row]
+        _ = self.ride[indexPath.row]
        // self.selectedTask = task
-        self.performSegue(withIdentifier: "postRide", sender: self)
+       // self.performSegue(withIdentifier: "postRide", sender: self)
     }
-    
-//    func getAllKeys() {
-//        rideRef.child("rides").observeSingleEvent(of: .value) { (snapshot) in
-//            for child in snapshot.children {
-//                let snap = child as! DataSnapshot
-//                let key = snap.key
-//                self.ride.append(key)
-//            }
-//        }
-//    }
 }
-
-
-
