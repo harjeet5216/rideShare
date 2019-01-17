@@ -8,8 +8,10 @@
 import UIKit
 import Foundation
 import Firebase
+import GoogleSignIn
 
 class Ride {
+    var userUid: String = Auth.auth().currentUser!.uid
     var origin: String = ""
     var destination: String = ""
     var seats: String = ""
@@ -24,6 +26,7 @@ class Ride {
         self.seats = seats
         self.fare = fare
         self.dateAndTime = dateAndTime
+       // self.userUid = Auth.auth().currentUser!.uid
         ref = Database.database().reference().child("rides").childByAutoId()
     }
     
@@ -35,6 +38,7 @@ class Ride {
             seats = value["seats"] as! String
             fare = value["fare"] as! String
             dateAndTime = value["dateAndTime"] as! String
+           // userUid = value["userUid"] as! String
         }
     }
     
@@ -48,7 +52,8 @@ class Ride {
             "destination" : destination,
             "seats" : seats,
             "fare" : fare,
-            "dateAndTime" : dateAndTime
+            "dateAndTime" : dateAndTime,
+            "userUid" : userUid
         ]
     }
 }

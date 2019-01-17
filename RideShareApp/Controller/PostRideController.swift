@@ -30,14 +30,11 @@ class PostRideController: UIViewController, UITextFieldDelegate {
     
     
     @IBAction func signOut(_ sender: Any) {
-        do {
-            try Auth.auth().signOut()
-            try GIDSignIn.sharedInstance()?.signOut()
+       
+            try! Auth.auth().signOut()
+            try! GIDSignIn.sharedInstance()?.signOut()
             self.dismiss(animated: true, completion: nil)
-        } catch let error as NSError {
-            print(error.localizedDescription)
         }
-    }
     @IBAction func postRide(_ sender: Any) {
         let newRide = Ride(origin: origin.text!, destination: destination.text!, seats: seats.text!, fare: fare.text!, dateAndTime: inputTextField.text!)
         newRide.save()
