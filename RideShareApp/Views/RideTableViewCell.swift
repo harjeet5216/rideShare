@@ -28,3 +28,7 @@ class RideTableViewCell: UITableViewCell {
     }
     
 }
+
+
+// Added this line to commit messages
+
