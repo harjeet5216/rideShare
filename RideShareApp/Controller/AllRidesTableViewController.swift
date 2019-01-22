@@ -12,9 +12,6 @@ import GoogleSignIn
 
 class AllRidesTableViewController: UITableViewController {
     
-
-   // @IBOutlet weak var addRidebutton: UIBarButtonItem!
-    
     let rideRef = Database.database().reference().child("rides").queryOrdered(byChild: "origin")
     var ride = [Ride]()
     
@@ -38,7 +35,6 @@ class AllRidesTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         self.tableView.estimatedRowHeight = 92.0
         self.tableView.rowHeight = UITableView.automaticDimension
     }
@@ -49,7 +45,6 @@ class AllRidesTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return ride.count
-        
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

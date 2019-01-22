@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		548B3F2521E7AF0F00BB358A /* Ride.swift in Sources */ = {isa = PBXBuildFile; fileRef = 548B3F2421E7AF0F00BB358A /* Ride.swift */; };
 		549A8E9F21E42700001177B8 /* AllRidesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 549A8E9E21E42700001177B8 /* AllRidesTableViewController.swift */; };
+		54D54B0D21F6CDCE00994AB4 /* UserProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54D54B0C21F6CDCE00994AB4 /* UserProfileController.swift */; };
+		54D54B0F21F785A300994AB4 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54D54B0E21F785A300994AB4 /* User.swift */; };
 		54DC576B21DE928F0034F8B2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54DC576A21DE928F0034F8B2 /* AppDelegate.swift */; };
 		54DC576D21DE928F0034F8B2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54DC576C21DE928F0034F8B2 /* ViewController.swift */; };
 		54DC577021DE928F0034F8B2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 54DC576E21DE928F0034F8B2 /* Main.storyboard */; };
@@ -49,6 +51,8 @@
 		3FBDA6AEF262BC6FB3920434 /* Pods-RideShareAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RideShareAppTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RideShareAppTests/Pods-RideShareAppTests.debug.xcconfig"; sourceTree = "<group>"; };
 		548B3F2421E7AF0F00BB358A /* Ride.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ride.swift; sourceTree = "<group>"; };
 		549A8E9E21E42700001177B8 /* AllRidesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllRidesTableViewController.swift; sourceTree = "<group>"; };
+		54D54B0C21F6CDCE00994AB4 /* UserProfileController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileController.swift; sourceTree = "<group>"; };
+		54D54B0E21F785A300994AB4 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		54DC576721DE928F0034F8B2 /* RideShareApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RideShareApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		54DC576A21DE928F0034F8B2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		54DC576C21DE928F0034F8B2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -175,6 +179,7 @@
 				549A8E9E21E42700001177B8 /* AllRidesTableViewController.swift */,
 				54E2D1FF21E91784008135AF /* PostRideController.swift */,
 				54E2D22C21EE951F008135AF /* SearchRideTableViewController.swift */,
+				54D54B0C21F6CDCE00994AB4 /* UserProfileController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -183,6 +188,7 @@
 			isa = PBXGroup;
 			children = (
 				548B3F2421E7AF0F00BB358A /* Ride.swift */,
+				54D54B0E21F785A300994AB4 /* User.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -471,8 +477,10 @@
 			files = (
 				54DC576D21DE928F0034F8B2 /* ViewController.swift in Sources */,
 				549A8E9F21E42700001177B8 /* AllRidesTableViewController.swift in Sources */,
+				54D54B0D21F6CDCE00994AB4 /* UserProfileController.swift in Sources */,
 				54DC576B21DE928F0034F8B2 /* AppDelegate.swift in Sources */,
 				548B3F2521E7AF0F00BB358A /* Ride.swift in Sources */,
+				54D54B0F21F785A300994AB4 /* User.swift in Sources */,
 				54E2D22721EC18D1008135AF /* RideTableViewCell.swift in Sources */,
 				54E2D20021E91784008135AF /* PostRideController.swift in Sources */,
 				54E2D22D21EE951F008135AF /* SearchRideTableViewController.swift in Sources */,

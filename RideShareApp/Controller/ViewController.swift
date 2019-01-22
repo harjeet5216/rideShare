@@ -58,6 +58,7 @@ class ViewController: UIViewController, GIDSignInUIDelegate {
         
         GIDSignIn.sharedInstance().uiDelegate = self
         GIDSignIn.sharedInstance().signIn()
+
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -68,4 +69,9 @@ class ViewController: UIViewController, GIDSignInUIDelegate {
         textField.resignFirstResponder()
         return true
     }
+    
+    @objc func handleSelectProfileImageView() {
+        print("Hello, how are you ? ")
+    }
+    
 }
