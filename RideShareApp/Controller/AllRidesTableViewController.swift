@@ -39,7 +39,7 @@ class AllRidesTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.tableView.estimatedRowHeight = 92.0
+        self.tableView.estimatedRowHeight = 122.0
         self.tableView.rowHeight = UITableView.automaticDimension
     }
     
