@@ -16,6 +16,9 @@ class RideTableViewCell: UITableViewCell {
     @IBOutlet weak var destinationInfo: UILabel!
     @IBOutlet weak var seatsInfo: UILabel!   
     @IBOutlet weak var fareInfo: UILabel!
+  
+    
+    
     
     var ride: Ride! {
         didSet {
