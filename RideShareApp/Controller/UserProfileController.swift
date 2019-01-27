@@ -8,6 +8,8 @@
 
 import UIKit
 import Firebase
+import FirebaseStorage
+
 
 
 
@@ -18,13 +20,55 @@ class UserProfileController: UIViewController, UIImagePickerControllerDelegate, 
     
     var tapGesture = UIGestureRecognizer()
     
-    let storageFef =
+   
     
-    let ref = Database.database().reference(fromURL: "gs://rideshareucdavis.appspot.com/")
+    let ref = Database.database().reference(fromURL: "https://rideshareucdavis.firebaseio.com/")
     
     @IBAction func updateProfile(_ sender: Any) {
         
+        let imageName = NSUUID().uuidString
+        let uid = Auth.auth().currentUser?.uid
+        let storageRef = Storage.storage().reference().child("profile_images").child("\(imageName).png")
         
+       // let values = ["userName" : userName, "email" : Auth.auth().currentUser!.email, ""]
+        if let uploadData = self.userImage.image!.pngData() {
+            
+            storageRef.putData(uploadData, metadata: nil, completion: { (_, error) in
+                
+                if let error = error {
+                    print(error)
+                    return
+                }
+                
+                storageRef.downloadURL(completion: { (url, err) in
+                    if let err = err {
+                        print(err)
+                        return
+                    }
+                    
+                    guard let url = url else { return }
+                    let values = ["displayName": Auth.auth().currentUser?.displayName, "email": Auth.auth().currentUser?.email, "profileImageUrl": url.absoluteString, "userName" : self.userName.text!]
+                    
+                    self.updateUserIntoDatabaseWithUID(uid!, values: values as [String : AnyObject])
+                })
+                
+            })
+        }
+    }
+    
+    fileprivate func updateUserIntoDatabaseWithUID(_ uid: String, values: [String: AnyObject]) {
+        let ref = Database.database().reference()
+        let usersReference = ref.child("users").child(uid)
+        
+        usersReference.updateChildValues(values, withCompletionBlock: { (err, ref) in
+            
+            if let err = err {
+                print(err)
+                return
+            }
+            
+           self.navigationController!.popViewController(animated: true)
+        })
     }
     
     

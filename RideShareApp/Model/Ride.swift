@@ -38,7 +38,7 @@ class Ride {
             seats = value["seats"] as! String
             fare = value["fare"] as! String
             dateAndTime = value["dateAndTime"] as! String
-           // userUid = value["userUid"] as! String
+            userUid = value["userUid"] as! String
         }
     }
     
