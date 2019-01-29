@@ -20,10 +20,16 @@ class RideTableViewCell: UITableViewCell {
     
     @IBOutlet weak var imageU: UIImageView!
     
+
+    
+    
     let userRef = Database.database().reference().child("users")
     
     var ride: Ride! {
         didSet {
+            
+            imageU.layer.cornerRadius = imageU.frame.height / 2
+            imageU.clipsToBounds = true
             
             userRef.child("\(ride.userUid)").child("profileImageUrl").observeSingleEvent(of: .value, with: { (snapshot) in
 //                print(snapshot.value!)
