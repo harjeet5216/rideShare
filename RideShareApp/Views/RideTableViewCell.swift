@@ -20,8 +20,31 @@ class RideTableViewCell: UITableViewCell {
     
     
     
+    
+    @IBOutlet weak var imageU: UIImageView!
+    
+
+    
+    
+    let userRef = Database.database().reference().child("users")
+    
     var ride: Ride! {
         didSet {
+            
+            imageU.layer.cornerRadius = imageU.frame.height / 2
+            imageU.clipsToBounds = true
+            
+            userRef.child("\(ride.userUid)").child("profileImageUrl").observeSingleEvent(of: .value, with: { (snapshot) in
+//                print(snapshot.value!)
+                
+                if let url = URL(string: "\(snapshot.value!)") {
+                    
+                    self.loadImagesUsingCacheUrlString(urlString: url.absoluteString)
+                    
+                }
+                
+            }, withCancel: nil)
+            
             dateAndTime.text = ride.dateAndTime
             originInfo.text = ride.origin
             destinationInfo.text = ride.destination
