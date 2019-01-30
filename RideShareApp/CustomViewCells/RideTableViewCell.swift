@@ -17,14 +17,7 @@ class RideTableViewCell: UITableViewCell {
     @IBOutlet weak var seatsInfo: UILabel!   
     @IBOutlet weak var fareInfo: UILabel!
   
-    
-    
-    
-    
     @IBOutlet weak var imageU: UIImageView!
-    
-
-    
     
     let userRef = Database.database().reference().child("users")
     
@@ -35,14 +28,9 @@ class RideTableViewCell: UITableViewCell {
             imageU.clipsToBounds = true
             
             userRef.child("\(ride.userUid)").child("profileImageUrl").observeSingleEvent(of: .value, with: { (snapshot) in
-//                print(snapshot.value!)
-                
                 if let url = URL(string: "\(snapshot.value!)") {
-                    
                     self.loadImagesUsingCacheUrlString(urlString: url.absoluteString)
-                    
                 }
-                
             }, withCancel: nil)
             
             dateAndTime.text = ride.dateAndTime
@@ -52,9 +40,4 @@ class RideTableViewCell: UITableViewCell {
             seatsInfo.text = ride.seats
         }
     }
-    
 }
-
-
-// Added this line to commit messages
-

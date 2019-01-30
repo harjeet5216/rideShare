@@ -52,7 +52,7 @@ class PostRideController: UIViewController, UITextFieldDelegate {
     
     @objc func dateChanged(datePicker: UIDatePicker) {
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "EEEE, MMMM d yyyy h:mm a"
+        dateFormatter.dateFormat = "EEEE, MMMM d yyyy"
         inputTextField.text = dateFormatter.string(from: datePicker.date)
 
     }
