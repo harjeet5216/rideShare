@@ -11,6 +11,7 @@ import UIKit
 import Firebase
 
 class RideTableViewCell: UITableViewCell {
+    
     @IBOutlet weak var dateAndTime: UILabel!
     @IBOutlet weak var originInfo: UILabel!
     @IBOutlet weak var destinationInfo: UILabel!
@@ -38,7 +39,7 @@ class RideTableViewCell: UITableViewCell {
             
             userRef.child("\(ride.userUid)").child("userName").observeSingleEvent(of: .value, with: { (snapshot) in
                 if let tempUserName = snapshot.value {
-                    self.userName.text = tempUserName as! String
+                    self.userName.text = tempUserName as? String
                 }
             }, withCancel: nil)
             

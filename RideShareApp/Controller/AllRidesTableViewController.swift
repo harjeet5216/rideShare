@@ -55,8 +55,10 @@ class AllRidesTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        self.tableView.estimatedRowHeight = 92.0
-//        self.tableView.rowHeight = UITableView.automaticDimension
+        self.tableView.estimatedRowHeight = 92.0
+        self.tableView.rowHeight = UITableView.automaticDimension
+//        let  newRider = Rider(origin: "Berkeley", destination: "Fresno", dateAndTime: "Thursday, January 1 2019")
+//        newRider.save()
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {

@@ -12,13 +12,20 @@ import Firebase
 
 class SecondTableViewCell: UITableViewCell {
     
-    @IBOutlet weak var dataInfo: UILabel!
-    
+    @IBOutlet weak var userName: UILabel!
+    @IBOutlet weak var dateAndTime: UILabel!
+    @IBOutlet weak var origin: UILabel!
+    @IBOutlet weak var timeAgo: UILabel!
+    @IBOutlet weak var destination: UILabel!
     
     
     var rider: Rider! {
         didSet {
-            dataInfo.text = rider.displayName
+            userName.text = "Sample"
+            dateAndTime.text = rider.dateAndTime
+            origin.text = rider.origin
+            destination.text = rider.destination
+            timeAgo.text = Date(timeIntervalSince1970: TimeInterval(truncating: rider.createdAt)).timeAgoSinceDate()
         }
     }
 }
