@@ -92,13 +92,13 @@ class AllRidesTableViewController: UITableViewController {
         }
     }
     
-//    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-//        if editingStyle == UITableViewCell.EditingStyle.delete {
-//            let task = self.ride[indexPath.row]
-//            task.ref.removeValue()
-//        }
-//    }
-//
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == UITableViewCell.EditingStyle.delete {
+            let task = self.ride[indexPath.row]
+            task.ref.removeValue()
+        }
+    }
+
 //    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 //        _ = self.ride[indexPath.row]
 //        self.selectedTask = task

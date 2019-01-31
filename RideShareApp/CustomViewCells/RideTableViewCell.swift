@@ -16,11 +16,14 @@ class RideTableViewCell: UITableViewCell {
     @IBOutlet weak var destinationInfo: UILabel!
     @IBOutlet weak var seatsInfo: UILabel!   
     @IBOutlet weak var fareInfo: UILabel!
-  
+    @IBOutlet weak var timeAgo: UILabel!
+    @IBOutlet weak var userName: UILabel!
+    
     @IBOutlet weak var imageU: UIImageView!
     
     let userRef = Database.database().reference().child("users")
     
+
     var ride: Ride! {
         didSet {
             
@@ -33,11 +36,23 @@ class RideTableViewCell: UITableViewCell {
                 }
             }, withCancel: nil)
             
+            userRef.child("\(ride.userUid)").child("userName").observeSingleEvent(of: .value, with: { (snapshot) in
+                if let tempUserName = snapshot.value {
+                    self.userName.text = tempUserName as! String
+                }
+            }, withCancel: nil)
+            
+            
+           // https://youtu.be/fyqksNlC8ks to handle timestamp 
+            
+            
             dateAndTime.text = ride.dateAndTime
             originInfo.text = ride.origin
             destinationInfo.text = ride.destination
             fareInfo.text = ride.fare
             seatsInfo.text = ride.seats
+            timeAgo.text = Date(timeIntervalSince1970: TimeInterval(truncating: ride.createdAt)).timeAgoSinceDate()
         }
     }
 }
+

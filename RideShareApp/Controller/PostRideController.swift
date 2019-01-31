@@ -35,6 +35,7 @@ class PostRideController: UIViewController, UITextFieldDelegate {
             try! GIDSignIn.sharedInstance()?.signOut()
             self.dismiss(animated: true, completion: nil)
         }
+    
     @IBAction func postRide(_ sender: Any) {
         let newRide = Ride(origin: origin.text!, destination: destination.text!, seats: seats.text!, fare: fare.text!, dateAndTime: inputTextField.text!)
         newRide.save()
@@ -54,6 +55,9 @@ class PostRideController: UIViewController, UITextFieldDelegate {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "EEEE, MMMM d yyyy"
         inputTextField.text = dateFormatter.string(from: datePicker.date)
+        
+        var createdAt: NSNumber = NSNumber(value: Int(NSDate().timeIntervalSince1970))
+        
 
     }
 }
