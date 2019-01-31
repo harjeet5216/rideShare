@@ -17,6 +17,7 @@ class Ride {
     var seats: String = ""
     var fare: String = ""
     var dateAndTime: String = ""
+    var createdAt: NSNumber = NSNumber(value: Int(NSDate().timeIntervalSince1970))
     
     let ref: DatabaseReference!
     
@@ -26,7 +27,7 @@ class Ride {
         self.seats = seats
         self.fare = fare
         self.dateAndTime = dateAndTime
-       // self.userUid = Auth.auth().currentUser!.uid
+        // self.userUid = Auth.auth().currentUser!.uid
         ref = Database.database().reference().child("rides").childByAutoId()
     }
     
@@ -39,6 +40,7 @@ class Ride {
             fare = value["fare"] as! String
             dateAndTime = value["dateAndTime"] as! String
             userUid = value["userUid"] as! String
+            createdAt = value["createdAt"] as! NSNumber
         }
     }
     
@@ -53,7 +55,8 @@ class Ride {
             "seats" : seats,
             "fare" : fare,
             "dateAndTime" : dateAndTime,
-            "userUid" : userUid
+            "userUid" : userUid,
+            "createdAt" : createdAt
         ]
     }
 }
